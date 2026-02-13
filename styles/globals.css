@@ -1,0 +1,118 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  cursor: url('/images/pointer.png'), auto;
+  background: #111;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+canvas {
+  width: 100%;
+  height: auto;
+  background: #111;
+}
+
+#valentinesButton {
+  display: none;
+  position: absolute;
+  background-color: #2d2dff;
+  border: 2px solid #2d2dff;
+  color: #fff;
+  cursor: pointer;
+  height: 50px;
+  font-size: 16px;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  border-radius: 10px;
+  top: calc(50% + 150px);
+  left: 50%;
+  transform: translateX(-50%);
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  padding: 0 18px;
+}
+
+#valentinesButton.visible {
+  display: block;
+}
+
+#valentinesButton:hover {
+  background-color: #1f1faa;
+  color: #eee;
+}
+
+.valentinePrompt {
+  position: fixed;
+  left: 50%;
+  top: calc(50% + 210px);
+  transform: translateX(-50%);
+  z-index: 10;
+  text-align: center;
+  color: #e9e9ff;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  width: min(92vw, 640px);
+}
+
+.valentinePrompt.accepted {
+  top: calc(50% + 180px);
+}
+
+.questionText {
+  margin: 0;
+  font-size: clamp(20px, 4vw, 30px);
+  text-shadow: 0 0 8px rgba(45, 45, 255, 0.9);
+}
+
+.answerRow {
+  margin-top: 14px;
+  position: relative;
+  height: 150px;
+}
+
+.yesButton,
+.noButton {
+  position: absolute;
+  border: 2px solid #2d2dff;
+  border-radius: 10px;
+  background: #2d2dff;
+  color: #fff;
+  cursor: pointer;
+  height: 48px;
+  min-width: 84px;
+  padding: 0 16px;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-size: 18px;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.yesButton:hover,
+.noButton:hover {
+  background-color: #1f1faa;
+}
+
+.yesButton {
+  left: 34%;
+  top: 60%;
+  transform: translate(-50%, -50%);
+}
+
+.noButton {
+  transform-origin: center center;
+}
+
+.noButton.moving {
+  transition: left 0.15s ease, top 0.15s ease, transform 0.15s ease, background-color 0.2s ease;
+}
+
+@media (max-width: 600px) {
+  .valentinePrompt {
+    top: calc(50% + 190px);
+  }
+
+  .yesButton {
+    left: 28%;
+  }
+}
