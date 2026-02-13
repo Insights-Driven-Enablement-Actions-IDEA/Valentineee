@@ -6,7 +6,7 @@ export default function HomePage() {
   const [questionVisible, setQuestionVisible] = useState(false);
   const [accepted, setAccepted] = useState(false);
   const [noAttempts, setNoAttempts] = useState(0);
-  const [noButtonPosition, setNoButtonPosition] = useState({ x: 65, y: 60 });
+  const [noButtonPosition, setNoButtonPosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -239,6 +239,17 @@ export default function HomePage() {
     };
   }, []);
 
+  useEffect(() => {
+    if (!questionVisible || typeof window === 'undefined') {
+      return;
+    }
+
+    setNoButtonPosition({
+      x: Math.floor(window.innerWidth / 2 + 70),
+      y: Math.floor(window.innerHeight / 2 + 245),
+    });
+  }, [questionVisible]);
+
   function moveNoButton() {
     if (typeof window === 'undefined') {
       return;
@@ -246,10 +257,10 @@ export default function HomePage() {
 
     setNoAttempts((previous) => previous + 1);
 
-    const minX = 12;
-    const minY = 12;
-    const maxX = Math.max(minX, window.innerWidth - 120);
-    const maxY = Math.max(minY, window.innerHeight - 60);
+    const minX = 8;
+    const minY = 8;
+    const maxX = Math.max(minX, window.innerWidth - 110);
+    const maxY = Math.max(minY, window.innerHeight - 54);
     const nextX = Math.floor(Math.random() * (maxX - minX + 1)) + minX;
     const nextY = Math.floor(Math.random() * (maxY - minY + 1)) + minY;
 
@@ -260,13 +271,15 @@ export default function HomePage() {
     setAccepted(true);
   }
 
-  const noButtonScale = Math.max(0.2, 1 - noAttempts * 0.08);
+  const noButtonScale = Math.max(0.72, 1 - noAttempts * 0.015);
 
-  const noButtonStyle = {
-    left: `${noButtonPosition.x}px`,
-    top: `${noButtonPosition.y}px`,
-    transform: `scale(${noButtonScale})`,
-  };
+  const noButtonStyle = noAttempts > 0
+    ? {
+      left: `${noButtonPosition.x}px`,
+      top: `${noButtonPosition.y}px`,
+      transform: `scale(${noButtonScale})`,
+    }
+    : undefined;
 
   const showPrompt = questionVisible && !accepted;
 
@@ -282,6 +295,11 @@ export default function HomePage() {
     if (showPrompt) {
       moveNoButton();
     }
+  }
+
+  function onNoPointerDown(event) {
+    event.preventDefault();
+    moveNoButton();
   }
 
   function onNoClick(event) {
@@ -316,6 +334,7 @@ export default function HomePage() {
                 type="button"
                 style={noButtonStyle}
                 onPointerEnter={onNoPointerEnter}
+                onPointerDown={onNoPointerDown}
                 onClick={onNoClick}
               >
                 No
