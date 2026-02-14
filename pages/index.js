@@ -180,7 +180,7 @@ export default function HomePage() {
         if (window.innerWidth < 600) {
           drawTextWithLineBreaks(['I\'m obsessed with you so much Chioma Precious Chigozie Okafor, more than', 'all the time and space in the universe can contain'], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
         } else {
-          context.fillText('I\'m obsessed with you so much Chioma Precious Chigozie Okafor, more than all the time and space in the universe can contain', canvas.width / 2, canvas.height / 2);
+          drawTextWithLineBreaks(['I\'m obsessed with you so much Chioma Precious Chigozie Okafor,', 'more than all the time and space in the universe can contain'], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
         }
         opacity += 0.01;
       }
@@ -190,7 +190,7 @@ export default function HomePage() {
         if (window.innerWidth < 600) {
           drawTextWithLineBreaks(['and I can\'t wait to spend all the time in', 'the world to share that love with you!'], canvas.width / 2, canvas.height / 2 + 60, fontSize, lineHeight);
         } else {
-          context.fillText('and I can\'t wait to spend all the time in the world to share that love with you!', canvas.width / 2, canvas.height / 2 + 50);
+          drawTextWithLineBreaks(['and I can\'t wait to spend all the time in the world', 'to share that love with you!'], canvas.width / 2, canvas.height / 2 + 50, fontSize, lineHeight);
         }
         secondOpacity += 0.01;
       }
