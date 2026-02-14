@@ -178,9 +178,9 @@ export default function HomePage() {
       if (frameNumber > 2500 && frameNumber < 99999) {
         context.fillStyle = `rgba(45, 45, 255, ${opacity})`;
         if (window.innerWidth < 600) {
-          drawTextWithLineBreaks(['I\'m obsessed with you so much Chioma Precious Chigozie Okafor, more than', 'all the time and space in the universe can contain'], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
+          drawTextWithLineBreaks([`I'm obsessed with you so much ${name}, more than`, 'all the time and space in the universe can contain'], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
         } else {
-          drawTextWithLineBreaks(['I\'m obsessed with you so much Chioma Precious Chigozie Okafor,', 'more than all the time and space in the universe can contain'], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
+          drawTextWithLineBreaks([`I'm obsessed with you so much ${name},`, 'more than all the time and space in the universe can contain'], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
         }
         opacity += 0.01;
       }
@@ -314,7 +314,7 @@ export default function HomePage() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta property="og:image" content="/images/favicon.png" />
         <link rel="icon" href="/images/favicon.png" />
-        <title>Happy Valentine's Day Chiomaaaaaa Chigozie my love Okafor</title>
+        <title>Happy Valentine's Day baby</title>
       </Head>
 
       <canvas id="starfield" ref={canvasRef} />

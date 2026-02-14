@@ -189,9 +189,9 @@ function drawText() {
         context.fillStyle = `rgba(45, 45, 255, ${opacity})`;
 
         if (window.innerWidth < 600) {
-            drawTextWithLineBreaks(["I'm obsessed with you so much Chioma Chigozie Precious Okafor, more than", "all the time and space in the universe can contain"], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
+            drawTextWithLineBreaks(["I'm obsessed with you so much baby, more than", "all the time and space in the universe can contain"], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
         } else {
-            context.fillText("I'm obsessed with you so much Chioma Chigozie Precious Okafor, more than all the time and space in the universe can contain", canvas.width/2, canvas.height/2);
+            context.fillText("I'm obsessed with you so much baby, more than all the time and space in the universe can contain", canvas.width/2, canvas.height/2);
         }
 
         opacity = opacity + 0.01;
