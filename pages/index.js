@@ -188,16 +188,16 @@ export default function HomePage() {
       if (frameNumber >= 2750 && frameNumber < 99999) {
         context.fillStyle = `rgba(45, 45, 255, ${secondOpacity})`;
         if (window.innerWidth < 600) {
-          drawTextWithLineBreaks(['and I can\'t wait to spend all the time in', 'the world to share that love with you!'], canvas.width / 2, canvas.height / 2 + 60, fontSize, lineHeight);
+          drawTextWithLineBreaks(['and I can\'t wait to spend all the time in', 'the world to share that love with you!'], canvas.width / 2, canvas.height / 2 + 100, fontSize, lineHeight);
         } else {
-          drawTextWithLineBreaks(['and I can\'t wait to spend all the time in the world', 'to share that love with you!'], canvas.width / 2, canvas.height / 2 + 50, fontSize, lineHeight);
+          drawTextWithLineBreaks(['and I can\'t wait to spend all the time in the world', 'to share that love with you!'], canvas.width / 2, canvas.height / 2 + 90, fontSize, lineHeight);
         }
         secondOpacity += 0.01;
       }
 
       if (frameNumber >= 3000 && frameNumber < 99999) {
         context.fillStyle = `rgba(45, 45, 255, ${thirdOpacity})`;
-        context.fillText("Happy Valentine's Day Baby", canvas.width / 2, canvas.height / 2 + 120);
+        context.fillText("Happy Valentine's Day Baby", canvas.width / 2, canvas.height / 2 + 170);
         thirdOpacity += 0.01;
 
         if (!hasShownQuestion) {
