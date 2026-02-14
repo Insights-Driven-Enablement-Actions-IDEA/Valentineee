@@ -271,7 +271,7 @@ export default function HomePage() {
     setAccepted(true);
   }
 
-  const noButtonScale = Math.max(0.72, 1 - noAttempts * 0.015);
+  const noButtonScale = Math.max(0.2, Math.pow(0.8, noAttempts));
 
   const noButtonStyle = noAttempts > 0
     ? {
